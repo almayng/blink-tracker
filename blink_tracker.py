@@ -134,9 +134,9 @@ class BlinkMonitorApp:
             self.running = False  # Stopping the video loop
             self.root.update_idletasks()
 
-        # Wait for the stream to complete, but no more than 1 second
+        # Wait for the stream to complete
         if self.video_thread and self.video_thread.is_alive():
-            self.video_thread.join(timeout=5.0)
+            self.video_thread.join(timeout=1.0)
 
         # Make sure that the OpenCV window is closed
         try:
@@ -144,7 +144,7 @@ class BlinkMonitorApp:
         except:
             pass
 
-        # It is now safe to close the GUI
+        # Close the GUI
         self.root.destroy()
 
     def save_current_settings(self):
