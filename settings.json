@@ -1,0 +1,5 @@
+{
+    "ear_threshold": 0.2,
+    "alert_time": 6.0,
+    "show_video": true
+}
